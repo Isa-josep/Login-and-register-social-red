@@ -1,5 +1,5 @@
 <?php
-    class Uruario extends Conectar{
+    class Usuario extends Conectar{
         public function registrar_usuario($usu_nombre, $usu_correo, $usu_pass){
             $conectar= parent::conexion();
             parent::set_names();
