@@ -1,21 +1,29 @@
+
 <!doctype html>
-<html lang="es">
+<html lang="en">
+
     <head>
+
         <meta charset="utf-8">
-        <title>Acceso | Tec Export</title>
+        <title>Registro | Export Tec</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
+
         <!-- preloader css -->
-        <link rel="stylesheet" href="static/css/preloader.min-1.css" type="text/css">
+        <link rel="stylesheet" href="../../static/css/preloader.min.css" type="text/css">
+
         <!-- Bootstrap Css -->
-        <link href="static/css/bootstrap.min-1.css" id="bootstrap-style" rel="stylesheet" type="text/css">
+        <link href="../../static/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css">
         <!-- Icons Css -->
-        <link href="static/css/icons.min-1.css" rel="stylesheet" type="text/css">
+        <link href="../../static/css/icons.min.css" rel="stylesheet" type="text/css">
         <!-- App Css-->
-        <link href="static/css/app.min-1.css" id="app-style" rel="stylesheet" type="text/css">
+        <link href="../../static/css/app.min.css" id="app-style" rel="stylesheet" type="text/css">
+
     </head>
+
     <body>
+
     <!-- <body data-layout="horizontal"> -->
         <div class="auth-page">
             <div class="container-fluid p-0">
@@ -25,56 +33,59 @@
                             <div class="w-100">
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
-                                        <a href="index-1.html" class="d-block auth-logo">
-                                            <img src="static/picture/logo-sm-1.svg" alt="" height="28"> <span class="logo-txt">Minia</span>
+                                        <a href="index.html" class="d-block auth-logo">
+                                            <img src="../../static/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Tec Export</span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
                                         <div class="text-center">
-                                            <h5 class="mb-0">Tec Export!</h5>
-                                            <p class="text-muted mt-2">Inicie sesion para continual .</p>
+                                            <h5 class="mb-0">Registra tu cuenta</h5>
+                                            <!-- <p class="text-muted mt-2">Get your free Minia account now.</p> -->
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
                                             <div class="mb-3">
-                                                <label class="form-label">Correo Electronico</label>
-                                                <input type="email" class="form-control" id="usu_correo" placeholder="Ingrese Correo">
+                                                <label for="useremail" class="form-label">Correo</label>
+                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo" required="">  
+                                                <div class="invalid-feedback">
+                                                    Ingrese su correo
+                                                </div>      
+                                            </div>
+                    
+                                            <div class="mb-3">
+                                                <label for="username" class="form-label">Nombre Y Apellido</label>
+                                                <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre" required="">
+                                                <div class="invalid-feedback">
+                                                    Ingrese su nombre
+                                                </div>  
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="userpassword" class="form-label">Contraseña</label>
+                                                <input type="password" class="form-control" id="userpassword" placeholder="Ingrese contraseña" required="">
+                                                <div class="invalid-feedback">
+                                                    ingrese su contraseña
+                                                </div>       
+                                            </div>
+
+                                            <div class="mb-3">
+                                                <label for="userpassword" class="form-label"> Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="userpassword" placeholder="Confirmar contraseña" required="">
+                                                <div class="invalid-feedback">
+                                                    ingrese su contraseña
+                                                </div>       
+                                            </div>
+
+                                            <div class="mb-4">
+                                                <p class="mb-0">Al registrarce aceptas los <a href="#" class="text-primary"><strong>Terminos y condiciones</strong></a></p>
                                             </div>
                                             <div class="mb-3">
-                                                <div class="d-flex align-items-start">
-                                                    <div class="flex-grow-1">
-                                                        <label class="form-label">Contraseña</label>
-                                                    </div>
-                                                    <div class="flex-shrink-0">
-                                                        <div class="">
-                                                            <a href="auth-recoverpw-1.html" class="text-muted">¿Olvidaste tu contraseña?</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" placeholder="Ingrese contraseña" aria-label="Password" aria-describedby="password-addon">
-                                                    <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-4">
-                                                <div class="col">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" id="remember-check">
-                                                        <label class="form-check-label" for="remember-check">
-                                                            Recuerdame
-                                                        </label>
-                                                    </div>  
-                                                </div>
-                                                
-                                            </div>
-                                            <div class="mb-3">
-                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Ingresar</button>
+                                                <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Registrarse</button>
                                             </div>
                                         </form>
 
                                         <!-- <div class="mt-4 pt-2 text-center">
                                             <div class="signin-other-title">
-                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Ingresar con -</h5>
+                                                <h5 class="font-size-14 mb-3 text-muted fw-medium">- Sign up using -</h5>
                                             </div>
 
                                             <ul class="list-inline mb-0">
@@ -97,11 +108,11 @@
                                         </div> -->
 
                                         <div class="mt-5 text-center">
-                                            <p class="text-muted mb-0">¿No tienes cuenta ? <a href="view/register/index.php" class="text-primary fw-semibold">Registrate</a> </p>
+                                            <p class="text-muted mb-0">¿Ya tiene un cuenta? <a href="../../index.php" class="text-primary fw-semibold"> Inicie sesion </a> </p>
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Export-Tec <i class="mdi mdi-heart text-danger"></i> by Isauro-Paredes</p>
+                                    <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Export-Tec <i class="mdi mdi-heart text-danger"></i> by Isauro-Paredes</p>
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +161,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-1-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                    <img src="../../static/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Richard Drews
@@ -175,7 +186,7 @@
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
                                                                 <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-2-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                    <img src="../../static/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 </div>
                                                                 <div class="flex-grow-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Rosanna French
@@ -199,7 +210,7 @@
                                                             feel.”</h4>
                                                         <div class="mt-4 pt-3 pb-5">
                                                             <div class="d-flex align-items-start">
-                                                                <img src="static/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                                                <img src="../../static/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
                                                                 <div class="flex-1 ms-3 mb-4">
                                                                     <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
                                                                     <p class="mb-0 text-white-50">Manager
@@ -227,16 +238,17 @@
 
 
         <!-- JAVASCRIPT -->
-        <script src="static/js/jquery.min-1.js"></script>
-        <script src="static/js/bootstrap.bundle.min-1.js"></script>
-        <script src="static/js/metisMenu.min-1.js"></script>
-        <script src="static/js/simplebar.min-1.js"></script>
-        <script src="static/js/waves.min-1.js"></script>
-        <script src="static/js/feather.min-1.js"></script>
+        <script src="../../static/js/jquery.min.js"></script>
+        <script src="../../static/js/bootstrap.bundle.min.js"></script>
+        <script src="../../static/js/metisMenu.min.js"></script>
+        <script src="../../static/js/simplebar.min.js"></script>
+        <script src="../../static/js/waves.min.js"></script>
+        <script src="../../static/js/feather.min.js"></script>
         <!-- pace js -->
-        <script src="static/js/pace.min-1.js"></script>
-        <!-- password addon init -->
-        <script src="static/js/pass-addon.init-1.js"></script>
+        <script src="../../static/js/pace.min.js"></script>
+
+        <!-- validation init -->
+        <script src="../../static/js/validation.init.js"></script>
 
     </body>
 
