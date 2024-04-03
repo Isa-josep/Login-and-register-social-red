@@ -250,6 +250,8 @@
         <!-- validation init -->
         <script src="../../static/js/validation.init.js"></script>
 
+        <script type="text/javascript" src="registro.js"></script>
+
     </body>
 
 </html>
