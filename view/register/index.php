@@ -42,36 +42,36 @@
                                             <h5 class="mb-0">Registra tu cuenta</h5>
                                             <!-- <p class="text-muted mt-2">Get your free Minia account now.</p> -->
                                         </div>
-                                        <form class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
+                                        <form id="mnt_form" class="needs-validation custom-form mt-4 pt-2" novalidate="" action="index.html">
                                             <div class="mb-3">
-                                                <label for="useremail" class="form-label">Correo</label>
-                                                <input type="email" class="form-control" id="useremail" placeholder="Ingrese su correo" required="">  
+                                                <label for="usu_correo" class="form-label">Correo</label>
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese su correo" required="">  
                                                 <div class="invalid-feedback">
                                                     Ingrese su correo
                                                 </div>      
                                             </div>
                     
                                             <div class="mb-3">
-                                                <label for="username" class="form-label">Nombre Y Apellido</label>
-                                                <input type="text" class="form-control" id="username" placeholder="Ingrese su nombre" required="">
+                                                <label for="usu_nombre" class="form-label">Nombre Y Apellido</label>
+                                                <input type="text" class="form-control" id="usu_nombre" name="usu_nombre" placeholder="Ingrese su nombre" required="">
                                                 <div class="invalid-feedback">
                                                     Ingrese su nombre
                                                 </div>  
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label">Contraseña</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Ingrese contraseña" required="">
+                                                <label for="usu_pass" class="form-label">Contraseña</label>
+                                                <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese Contraseña" required="">
                                                 <div class="invalid-feedback">
-                                                    ingrese su contraseña
+                                                    Ingrese Contraseña
                                                 </div>       
                                             </div>
 
                                             <div class="mb-3">
-                                                <label for="userpassword" class="form-label"> Confirmar Contraseña</label>
-                                                <input type="password" class="form-control" id="userpassword" placeholder="Confirmar contraseña" required="">
+                                                <label for="usu_pass_confir" class="form-label"> Confirmar Contraseña</label>
+                                                <input type="password" class="form-control" id="usu_pass_confir" name="usu_pass_confir" placeholder="Confirmar Contraseña" required="">
                                                 <div class="invalid-feedback">
-                                                    ingrese su contraseña
+                                                    Confirme Contraseña
                                                 </div>       
                                             </div>
 
