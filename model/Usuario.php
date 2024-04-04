@@ -6,7 +6,7 @@
             $sql="INSERT INTO tm_usuario 
                 (usu_nombre,usu_correo,usu_pass) 
                 VALUES 
-                ('?' , '?','?')";
+                (?,?,?)";
             $sql=$conectar->prepare($sql);
             //TODO: cmabiar parametros en caso de se necesario
             $sql->bindValue(1, $usu_nombre);
