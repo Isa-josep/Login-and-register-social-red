@@ -1,3 +1,5 @@
+var timerInterval;
+
 function init(){
     $("#mnt_form").on("submit", function(e){
         e.preventDefault();
@@ -70,6 +72,48 @@ function register(e){
         contentType: false,
         processData: false,
         success: function(datos){
+            if(datos=="OK"){
+                Swal.fire({
+                    title: "Registro!",
+                    text: "Se Registro De Forma Correcta: Espere Mientras Es Redireccionado Al inicio!",
+                    icon: "success",
+                    confirmButtonColor: "#5156be",
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: function(){
+                        Swal.showLoading();
+                        timerInterval = setInterval(function(){
+                            var content = Swal.getHtmlContainer();
+                            if(!content) return;
+                            var timerElement = content.querySelector("b");
+                            if(timerElement){
+                                timerElement.textContent = (Swal.getTimerLeft()/1000).toFixed(0);
+                            }
+                        },100);
+                    },
+                    didClose: function(){
+                        clearInterval(timerInterval);
+                        window.location.href = "../../index.php";
+                    }
+                }).then(function(result){
+
+                });
+            }
+            else if(datos=="Data Duplicada"){
+                Swal.fire({
+                    title: "Registro!",
+                    text: "Correo Ya Registrado!",
+                    icon: "error",
+                    confirmButtonColor: "#5156be",
+                });
+            }
+            else{
+                Swal.fire({
+                    title: "Error!",
+                    text: "Ocurrio Un Error Por Nuetra Parte Intente Mas tarde!",
+                    icon: "question",
+                });
+            }
             console.log(datos);
         }
     });
