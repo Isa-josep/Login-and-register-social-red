@@ -11,10 +11,11 @@
                 VALUES 
                 (?,?,?)";
             $sql=$conectar->prepare($sql);
+            $usu_pass_encrypt=$this->pass_encrypt($usu_pass);
             //TODO: cmabiar parametros en caso de se necesario
             $sql->bindValue(1, $usu_nombre);
             $sql->bindValue(2, $usu_correo);
-            $sql->bindValue(3, $usu_pass);
+            $sql->bindValue(3, $usu_pass_encrypt);
             $sql->execute();
             $sql1="SELECT Last_INSERT_ID() as 'usu_id'";
             $sql1=$conectar->prepare($sql1);
@@ -53,6 +54,12 @@
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $txt_descifrado);
             $sql->execute();
+        }
+
+        public function pass_encrypt($usu_pass){
+            $iv=openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
+            $cifrado=openssl_encrypt($usu_pass,$this->cipher,$this->key,OPENSSL_RAW_DATA,$iv);
+            return base64_encode($iv.$cifrado);
         }
     }
 ?>
