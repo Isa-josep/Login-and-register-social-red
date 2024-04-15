@@ -8,9 +8,22 @@
     class Email extends PHPMailer{
         protected $Gmail ='ceaprende@cecyteuruapan.edu.mx';
         protected $Gpassword = 'mehk jncp neit kzhf';
+        private $key="Tec-Export-Itsu";
+        private $cipher = "aes-256-cbc";
+        
+        // protected $cipher = "AES-128-CTR";
 
         public function registrar($usu_id){
+            
             $conexion = new Conectar();
+
+            $usuario=new Usuario();
+            $datos = $usuario->get_usuario_id($usu_id);
+
+            $iv=openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
+            $cifrado=openssl_encrypt($usu_id,$this->cipher,$this->key,OPENSSL_RAW_DATA,$iv);
+            $txt_cifrado=base64_encode($iv.$cifrado);
+
             $this->isSMTP();
             $this->Host = 'smtp.gmail.com';
             $this->Port = 587; //Puerto 
@@ -21,12 +34,11 @@
             $this->Password = $this->Gpassword;
             $this->setFrom($this->Gmail, 'Registro de Tec-Export Itsu');
             $this->CharSet = 'UTF-8';
-            // $this->addAddress($usu_correo);
-            $this->addAddress("isaurini1902@gmail.com");
+            $this->addAddress($datos[0]["usu_correo"]);
             $this->Subject = 'Registro de Usuarioo';
 
             $body = file_get_contents('../static/mail/registrar.html');
-            $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar/?id=".$usu_id,$body);
+            $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar/?id=".$txt_cifrado,$body);
             $this->Body = $body;
             $this->AltBody= strip_tags("Confirmar registro?");
 
