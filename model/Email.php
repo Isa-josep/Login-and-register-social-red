@@ -10,6 +10,7 @@
         protected $Gpassword = 'mehk jncp neit kzhf';
 
         public function registrar($usu_correo){
+            $conexion = new Conectar();
             $this->isSMTP();
             $this->Host = 'smtp.gmail.com';
             $this->Port = 587; //Puerto 
@@ -24,7 +25,7 @@
             $this->Subject = 'Registro de Usuarioo';
 
             $body = file_get_contents('../static/mail/registrar.html');
-            $body = str_replace("Funciona",$usu_correo,$body);
+            $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar",$body);
             $this->Body = $body;
             $this->AltBody= strip_tags("Confirmar registro?");
 
