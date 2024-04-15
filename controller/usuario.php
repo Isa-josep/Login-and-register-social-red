@@ -17,5 +17,9 @@
                 echo "Data Duplicada";
             }
         break;
+        case "activate":
+            $usuario->activate_user($_POST["usu_id"]);
+            echo "OK";
+        break;
     }
 ?>
