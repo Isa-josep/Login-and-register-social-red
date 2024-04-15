@@ -187,7 +187,7 @@
         <script src="../../static/js/feather.min.js"></script>
         <!-- pace js -->
         <script src="../../static/js/pace.min.js"></script>
-
+        <script type="text/javascript" src="confirmar.js"></script>
     </body>
 
 </html>
