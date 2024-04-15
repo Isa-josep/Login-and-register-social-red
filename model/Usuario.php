@@ -13,6 +13,10 @@
             $sql->bindValue(2, $usu_correo);
             $sql->bindValue(3, $usu_pass);
             $sql->execute();
+            $sql1="SELECT Last_INSERT_ID() as 'usu_id'";
+            $sql1=$conectar->prepare($sql1);
+            $sql1->execute();
+            return $sql1->fetchAll();
         }
         
         public function get_usuario_correo($usu_correo){

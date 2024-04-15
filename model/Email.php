@@ -9,7 +9,7 @@
         protected $Gmail ='ceaprende@cecyteuruapan.edu.mx';
         protected $Gpassword = 'mehk jncp neit kzhf';
 
-        public function registrar($usu_correo){
+        public function registrar($usu_id){
             $conexion = new Conectar();
             $this->isSMTP();
             $this->Host = 'smtp.gmail.com';
@@ -21,11 +21,12 @@
             $this->Password = $this->Gpassword;
             $this->setFrom($this->Gmail, 'Registro de Tec-Export Itsu');
             $this->CharSet = 'UTF-8';
-            $this->addAddress($usu_correo);
+            // $this->addAddress($usu_correo);
+            $this->addAddress("isaurini1902@gmail.com");
             $this->Subject = 'Registro de Usuarioo';
 
             $body = file_get_contents('../static/mail/registrar.html');
-            $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar",$body);
+            $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar/?id=".$usu_id,$body);
             $this->Body = $body;
             $this->AltBody= strip_tags("Confirmar registro?");
 
