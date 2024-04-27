@@ -81,6 +81,8 @@
             //generacion de contraseña
             $xpassusu = $this->generateRandomPassword();
 
+            $usuario->recover_password($usu_correo,$xpassusu);
+            
             echo $xpassusu;
             $body = file_get_contents('../static/mail/recuperar.html');
             $body = str_replace("xpassusu",$xpassusu,$body);

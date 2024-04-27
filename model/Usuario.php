@@ -56,6 +56,18 @@
             $sql->execute();
         }
 
+        public function recover_password ($usu_correo,$usu_pass){
+            $usu_pass_encrypt=$this->pass_encrypt($usu_pass);
+            
+            $conectar= parent::conexion();
+            parent::set_names();
+            $sql="UPDATE tm_usuario SET usu_pass=? WHERE usu_correo=?";
+            $sql=$conectar->prepare($sql);
+            $sql->bindValue(1, $usu_pass_encrypt); 
+            $sql->bindValue(2, $usu_correo); 
+            $sql->execute();    
+        }
+
         public function pass_encrypt($usu_pass){
             $iv=openssl_random_pseudo_bytes(openssl_cipher_iv_length($this->cipher));
             $cifrado=openssl_encrypt($usu_pass,$this->cipher,$this->key,OPENSSL_RAW_DATA,$iv);
