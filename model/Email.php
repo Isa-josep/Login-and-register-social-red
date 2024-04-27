@@ -75,9 +75,16 @@
             $this->CharSet = 'UTF-8';
             $this->addAddress($datos[0]["usu_correo"]);
             $this->Subject = 'Registro de Usuarioo';
+            
+            $url = $conexion->ruta();
+            
+            //generacion de contraseña
+            $xpassusu = $this->generateRandomPassword();
 
-            $body = file_get_contents('../static/mail/registrar.html');
-            // $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar/?id=".$txt_cifrado,$body);
+            echo $xpassusu;
+            $body = file_get_contents('../static/mail/recuperar.html');
+            $body = str_replace("xpassusu",$xpassusu,$body);
+            $body = str_replace("xlinksistema",$url,$body);
             $this->Body = $body;
             $this->AltBody= strip_tags("Recuperar contraseña");
 
@@ -93,5 +100,17 @@
             // $this->isHTML(true);
         }
 
+        private function generateRandomPassword(){
+            $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+            $password = '';
+            $length = 6; 
+
+            for ($i = 0; $i < $length; $i++) {
+            $index = rand(0, strlen($characters) - 1);
+            $password .= $characters[$index];
+            }
+
+            return $password;
+        }
     }
 ?>
