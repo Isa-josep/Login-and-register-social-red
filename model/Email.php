@@ -53,5 +53,45 @@
             }
             // $this->isHTML(true);
         }
+
+        public function recovery($usu_correo){
+            
+            $conexion = new Conectar();
+
+            $usuario=new Usuario();
+            $datos = $usuario->get_usuario_correo($usu_correo);
+
+           
+
+            $this->isSMTP();
+            $this->Host = 'smtp.gmail.com';
+            $this->Port = 587; //Puerto 
+            $this->SMTPAuth = true;
+            $this->SMTPSecure = 'tls';
+
+            $this->Username = $this->Gmail;
+            $this->Password = $this->Gpassword;
+            $this->setFrom($this->Gmail, 'Recuperar contraseña  de Tec-Export Itsu');
+            $this->CharSet = 'UTF-8';
+            $this->addAddress($datos[0]["usu_correo"]);
+            $this->Subject = 'Registro de Usuarioo';
+
+            $body = file_get_contents('../static/mail/registrar.html');
+            // $body = str_replace("xlinkcorreourl",$conexion->ruta()."view/confirmar/?id=".$txt_cifrado,$body);
+            $this->Body = $body;
+            $this->AltBody= strip_tags("Recuperar contraseña");
+
+            try{
+                $this->send();
+                return true;
+            }
+            catch(Exception $e){
+                echo "Error al enviar el correo: {$this->ErrorInfo}"; //TODO: eliminar si da error
+                return false;
+
+            }
+            // $this->isHTML(true);
+        }
+
     }
 ?>
