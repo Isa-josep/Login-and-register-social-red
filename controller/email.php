@@ -6,7 +6,15 @@
     $email = new Email();
     switch($_GET["op"]){
         case "recuperar":
-            $email->recovery($_POST["usu_correo"]);
+            $datos= $usuario->get_usuario_correo($_POST["usu_correo"]);
+            if(is_array($datos)== true and count($datos)==0){
+                echo "false";
+            }
+            else{
+                $email->recovery($_POST["usu_correo"]);
+                echo "true";
+            }
+            
             
         break;
     }
