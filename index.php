@@ -43,6 +43,38 @@
                                             <p class="text-muted mt-2">Inicie sesion para continual .</p>
                                         </div>
                                         <form class="custom-form mt-4 pt-2" action="" method="post" >
+                                           
+                                            <?php
+                                                if(isset($_GET["m"])){
+                                                    switch($_GET["m"]){
+                                                        case '1':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Correo no registrado
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '2':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Campos vacios
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '3':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Contraseña incorrecta
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                    }
+                                                }
+                                            ?>
+
                                             <div class="mb-3">
                                                 <label class="form-label">Correo Electronico</label>
                                                 <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo">
