@@ -79,6 +79,14 @@
                                                             </div>
                                                             <?php
                                                         break;
+                                                        case '6':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Verifique su correo para continuar
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
                                                     }
                                                 }
                                             ?>

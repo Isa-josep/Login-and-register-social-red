@@ -29,9 +29,8 @@
                                 $_SESSION["usu_id"]=$resultado["usu_id"];
                                 $_SESSION["usu_nombre"]=$resultado["usu_nombre"];
                                 $_SESSION["usu_correo"]=$resultado["usu_correo"];
-                                // $_SESSION["rol_id"]=$resultado["rol_id"];
-                                // $_SESSION["estado"]=$resultado["estado"];
-                                // $_SESSION["fecha_activate"]=$resultado["fecha_activate"];
+                                $_SESSION["role_id"]=$resultado["role_id"];
+                                $_SESSION["estado"]=$resultado["estado"];
                                 header("Location:".Conectar::ruta()."view/Home/");
                                 exit();
                             }

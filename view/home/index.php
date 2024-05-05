@@ -2,7 +2,7 @@
     require_once("../../config/conexion.php");
     require_once("../../model/Usuario.php");
     $usuario= new Usuario();
-    if(isset($_SESSION["usu_id"]) && count($_SESSION)>0){
+    if(isset($_SESSION["usu_id"]) && count($_SESSION)>0 && $_SESSION["estado"]==1){
         
     ?>
 <!DOCTYPE html>
@@ -114,6 +114,10 @@
 <script src="static/js/index.js"></script>
 </html>
 <?php
+    }
+    if( $_SESSION["estado"]==2){
+        header("Location:".Conectar::ruta()."index.php?m=6");
+        exit(); 
     }
     else{
         header("Location:".Conectar::ruta()."index.php?m=5");
