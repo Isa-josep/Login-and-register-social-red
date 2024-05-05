@@ -1,0 +1,207 @@
+svg > path:hover{
+    fill:black;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+.title{
+  margin-left: 100px;
+  font-family: 'livvic';
+  text-align: center;
+  margin-top: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  filter: drop-shadow(
+    0 8px 8px rgb(0, 0, 0)
+  );
+  background: linear-gradient(
+    270deg, #2e45f6 0%, #f44dd5 100%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sub-title{
+  font-size: 55px;
+  font-weight: bold;
+  font-family: 'livvic';
+  color: #F7C35F;
+  margin-left: 100px;
+}
+.sizedBox{
+  height: 15px;
+}
+.p-sub{
+  font-size: 25px;
+  font-family: 'livvic';
+  color: #F7C35F;
+  margin-left: 100px;
+
+}
+.navbar {
+  background-color: #032c55;
+  color: white;
+  padding: 15px;
+  
+}
+.navbar ul {
+  display: inline-block; 
+  list-style-type: none;
+  margin-left:50px;
+  
+}
+.navbar li {
+  display:inline; 
+  margin-right:20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-transform:capitalize;
+  letter-spacing: 1px;
+  transition: 0.5s;
+
+}
+.navbar li:hover {
+  display: inline-block;
+  padding: 0 2px;
+  cursor: pointer;
+  transform: translateY(-2px);
+  transform: translateX(-2px);
+  filter: drop-shadow(
+    0 6px 6px rgb(0, 0, 0)
+  );
+}
+.navbar a {
+  color:white; 
+  text-decoration:none;  
+}
+.itemList{
+  font-family: "Arial", sans-serif;
+  font-size: 18px;
+}
+.container {
+  background-image: url('../img/image.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 20px;
+  height: 100vh;
+}
+
+.container h1 {
+  font-size: 2em;
+}
+
+.container p {
+  font-size: 1em;
+}
+
+.button{
+  border-radius: 5px 0 5px 5px;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border: none;
+  margin-left: 100px;
+  background-color: #F7C35F;
+}
+.prueba{
+  background: #f71ccf;
+  width: 100%;
+  height: 100vh;
+}
+.section{
+  background: #334b35;
+  width: 100%;
+  height: 100vh;
+}
+.sub-section{
+  background: #263C28;
+  width: 50vh;
+  height: 50vh;
+}
+.card-img{
+  background-image: url('../img/imagencard.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh; 
+  width: 50vh; 
+  margin-left: 100px;
+  border-radius: 2vh;
+}
+.sub-section-right{
+  height: 50vh; 
+  width: 50vh; 
+  margin-left: 60vh; 
+}
+.title-right{
+  font-family: 'livvic';
+  color: #FFFFFF;
+  font-size: 25px;
+  font-weight: bold;
+  justify-self: unset;
+}
+.sub-right{
+  font-family: 'livvic';
+  color: #F7C35F;
+  font-size: 20px;
+  font-weight: medium;
+  justify-self: unset;
+}
+.img-right{
+  width: 20px;
+  height: 20px;
+}
+.down-section{
+  background: #334b35;
+  width: 100%;
+  height: 50vh;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.card-fruit{
+  height: 25vh; 
+  width: 25vh; 
+  border-radius: 2vh;
+  background-color: #445945;
+  margin-left: 5vh;
+  margin-right: 5vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.card-fruit:hover {
+  transition: opacity 0.6s ease; 
+  background-color: #F7C35F;
+  filter: drop-shadow(0 6px 6px rgb(0, 0, 0));
+  opacity: 1;
+}
+
+.title-down{
+  font-family: 'livvic';
+  color: #FFFFFF;
+  font-size: 45px;
+  font-weight: bold;
+}
+.divc{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.img-fruit{
+  width: 7vh;
+  height: 7vh;
+}
+.name-card-fluit{
+  font-family: 'livvic';
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: bold;
+}
