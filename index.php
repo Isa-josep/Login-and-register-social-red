@@ -87,6 +87,14 @@
                                                             </div>
                                                             <?php
                                                         break;
+                                                        case '7':
+                                                            ?>
+                                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Oopppss! no tienes permisos para acceder a esta pagina
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
                                                     }
                                                 }
                                             ?>
