@@ -2,7 +2,7 @@
     require_once("../../config/conexion.php");
     require_once("../../model/Usuario.php");
     $usuario= new Usuario();
-    if(isset($_SESSION["usu_id"]) && count($_SESSION)>0 && $_SESSION["estado"]==1){
+    if(isset($_SESSION["usu_id"]) && count($_SESSION)>0 ){
         
     ?>
 <!DOCTYPE html>
@@ -27,6 +27,7 @@
                 <li><a class="itemList" href="#">Servicios</a></li>
                 <li><a class="itemList" href="#">Noticias</a></li>
                 <li><a class="itemList" href="#">Contacto</a></li>
+                <li><a class="itemList" href="#">Gestion de Usuarios</a></li>
             </ul>
         </div>
         <div class="container">
