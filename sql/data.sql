@@ -27,3 +27,4 @@ CREATE TABLE `tm_usuario` (
 	PRIMARY KEY (`usu_id`) USING BTREE,
 	FOREIGN KEY (`role_id`) REFERENCES roles(`role_id`)
 );
+ SELECT * FROM tm_usuario;
