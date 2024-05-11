@@ -16,7 +16,7 @@
                 <li><a class="itemList" href="index.php">Inicio</a></li>
                 <li><a class="itemList" href="https://tecuruapan.edu.mx/" target="_blank">Nosotros</a></li>
                 <li><a class="itemList" href="#">Normas</a></li>
-                <li><a class="itemList" href="#">Servicios</a></li>
+                <li><a class="itemList" href="../../view/home/servicios.html">Servicios</a></li>
                 <li><a class="itemList" href="https://www.facebook.com/tecnmcampusuruapan" target="_blank">Noticias</a></li>
                 <li><a class="itemList" href="#">Contacto</a></li>
                 
