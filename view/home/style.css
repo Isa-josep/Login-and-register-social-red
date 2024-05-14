@@ -1,0 +1,109 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+.sub-title{
+    font-size: 55px;
+    font-weight: bold;
+    font-family: 'livvic';
+    color: #F7C35F;
+    margin-left: 100px;
+  }
+.container {
+    display: flex;
+    height: 100vh;
+}
+.img-container {
+    flex: 1;
+    background-image: url("static/img/image.png");
+    background-size: cover;
+    background-position: center;
+    
+}
+.login-form {
+    flex: 1;
+    background-color: #edf4fc;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 5, 0.2);
+}
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+form {
+    margin-top: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+input[type="submit"]:hover {
+    background-color: #448a40;
+}
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+a {
+    color: #4caf50;
+    text-decoration: none;
+}
+.section-log{
+    margin-top: 60px;
+    margin-left: 50px;
+    margin-right: 50px;
+    background-color: #ffffff;
+    height: 70vh;
+    width: 95vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0px 35px 0px 35px;
+    box-shadow: 0 0 35px rgba(0, 0, 5, .7);
+    flex-direction: column;
+}
+.form-log{
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+    width: 65vh;
+    border: rgb(163, 168, 163) solid 1px;
+}
+.inputn{
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    background-color: #dbf9f0ac;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    outline: none;
+}
+.title{
+    font-family: 'livvic';
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+    background: linear-gradient(
+      270deg, #2e45f6 0%, #f44dd5 100%
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }

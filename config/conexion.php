@@ -20,5 +20,15 @@
             //TODO: Cambiar la ruta de acuerdo al servidor
             return "http://localhost/login/";
         }
+        public function query($sql) {
+            try {
+              $stmt = $this->dbh->prepare($sql); // Prepare the query
+              $stmt->execute(); // Execute the query
+              return $stmt; // Return the statement object for further processing
+            } catch (Exception $e) {
+              // Handle errors appropriately (e.g., log the error)
+              return false;
+            }
+          }
     }
 ?>

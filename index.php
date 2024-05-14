@@ -1,3 +1,11 @@
+<?php
+    include_once ('config/conexion.php');
+    if(isset($_POST["enviar"]) && $_POST["enviar"]=="si"){
+        require_once ('model/Usuario.php');
+        $usuario= new Usuario();
+        $usuario->login();
+    }
+?>
 <!doctype html>
 <html lang="es">
     <head>
@@ -34,10 +42,66 @@
                                             <h5 class="mb-0">Tec Export!</h5>
                                             <p class="text-muted mt-2">Inicie sesion para continual .</p>
                                         </div>
-                                        <form class="custom-form mt-4 pt-2">
+                                        <form class="custom-form mt-4 pt-2" action="" method="post" >
+                                           
+                                            <?php
+                                                if(isset($_GET["m"])){
+                                                    switch($_GET["m"]){
+                                                        case '1':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Correo no registrado
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '2':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Campos vacios
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '3':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Contraseña incorrecta
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '5':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Inicie sesion para continuar
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '6':
+                                                            ?>
+                                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Verifique su correo para continuar
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                        case '7':
+                                                            ?>
+                                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Oopppss! no tienes permisos para acceder a esta pagina
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
+                                                    }
+                                                }
+                                            ?>
+
                                             <div class="mb-3">
                                                 <label class="form-label">Correo Electronico</label>
-                                                <input type="email" class="form-control" id="usu_correo" placeholder="Ingrese Correo">
+                                                <input type="email" class="form-control" id="usu_correo" name="usu_correo" placeholder="Ingrese Correo">
                                             </div>
                                             <div class="mb-3">
                                                 <div class="d-flex align-items-start">
@@ -52,7 +116,7 @@
                                                 </div>
                                                 
                                                 <div class="input-group auth-pass-inputgroup">
-                                                    <input type="password" class="form-control" placeholder="Ingrese contraseña" aria-label="Password" aria-describedby="password-addon">
+                                                    <input type="password" class="form-control" id="usu_pass" name="usu_pass" placeholder="Ingrese contraseña" aria-label="Password" aria-describedby="password-addon">
                                                     <button class="btn btn-light shadow-none ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                                 </div>
                                             </div>
@@ -68,6 +132,7 @@
                                                 
                                             </div>
                                             <div class="mb-3">
+                                                <input type="hidden" name="enviar" value="si">
                                                 <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Ingresar</button>
                                             </div>
                                         </form>
@@ -109,115 +174,7 @@
                         <!-- end auth full page content -->
                     </div>
                     <!-- end col -->
-                    <div class="col-xxl-9 col-lg-8 col-md-7">
-                        <div class="auth-bg pt-md-5 p-4 d-flex">
-                            <div class="bg-overlay bg-primary"></div>
-                            <ul class="bg-bubbles">
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                            </ul>
-                            <!-- end bubble effect -->
-                            <div class="row justify-content-center align-items-center">
-                                <div class="col-xl-7">
-                                    <div class="p-0 p-sm-4 px-xl-0">
-                                        <div id="reviewcarouselIndicators" class="carousel slide" data-bs-ride="carousel">
-                                            <div class="carousel-indicators carousel-indicators-rounded justify-content-start ms-0 mb-0">
-                                                <button type="button" data-bs-target="#reviewcarouselIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                                <button type="button" data-bs-target="#reviewcarouselIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                                <button type="button" data-bs-target="#reviewcarouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                            </div>
-                                            <!-- end carouselIndicators -->
-                                            <div class="carousel-inner">
-                                                <div class="carousel-item active">
-                                                    <div class="testi-contain text-white">
-                                                        <i class="bx bxs-quote-alt-left text-success display-6"></i>
-
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“I feel confident
-                                                            imposing change
-                                                            on myself. It's a lot more progressing fun than looking back.
-                                                            That's why
-                                                            I ultricies enim
-                                                            at malesuada nibh diam on tortor neaded to throw curve balls.”
-                                                        </h4>
-                                                        <div class="mt-4 pt-3 pb-5">
-                                                            <div class="d-flex align-items-start">
-                                                                <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-1-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                                                </div>
-                                                                <div class="flex-grow-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">Richard Drews
-                                                                    </h5>
-                                                                    <p class="mb-0 text-white-50">Web Designer</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="carousel-item">
-                                                    <div class="testi-contain text-white">
-                                                        <i class="bx bxs-quote-alt-left text-success display-6"></i>
-
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“Our task must be to
-                                                            free ourselves by widening our circle of compassion to embrace
-                                                            all living
-                                                            creatures and
-                                                            the whole of quis consectetur nunc sit amet semper justo. nature
-                                                            and its beauty.”</h4>
-                                                        <div class="mt-4 pt-3 pb-5">
-                                                            <div class="d-flex align-items-start">
-                                                                <div class="flex-shrink-0">
-                                                                    <img src="static/picture/avatar-2-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                                                </div>
-                                                                <div class="flex-grow-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">Rosanna French
-                                                                    </h5>
-                                                                    <p class="mb-0 text-white-50">Web Developer</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="carousel-item">
-                                                    <div class="testi-contain text-white">
-                                                        <i class="bx bxs-quote-alt-left text-success display-6"></i>
-
-                                                        <h4 class="mt-4 fw-medium lh-base text-white">“I've learned that
-                                                            people will forget what you said, people will forget what you
-                                                            did,
-                                                            but people will never forget
-                                                            how donec in efficitur lectus, nec lobortis metus you made them
-                                                            feel.”</h4>
-                                                        <div class="mt-4 pt-3 pb-5">
-                                                            <div class="d-flex align-items-start">
-                                                                <img src="static/picture/avatar-3-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                                                <div class="flex-1 ms-3 mb-4">
-                                                                    <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
-                                                                    <p class="mb-0 text-white-50">Manager
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- end carousel-inner -->
-                                        </div>
-                                        <!-- end review carousel -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <?php include_once 'view/html/shared/carrucel.php'; ?>
                     <!-- end col -->
                 </div>
                 <!-- end row -->
