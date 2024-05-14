@@ -27,4 +27,16 @@ CREATE TABLE `tm_usuario` (
 	PRIMARY KEY (`usu_id`) USING BTREE,
 	FOREIGN KEY (`role_id`) REFERENCES roles(`role_id`)
 );
+
+CREATE TABLE Jefes (
+    jefe_id INT AUTO_INCREMENT PRIMARY KEY,
+    jefe_nombre VARCHAR(50) NOT NULL,
+    jefe_role VARCHAR(150) NOT NULL,
+    jefe_correo VARCHAR(50) NOT NULL,
+    jefe_number VARCHAR(15) NOT NULL,
+    jefe_extension VARCHAR(10),
+    jefe_location VARCHAR(150) NOT NULL,
+    jefe_hire_date DATE NOT NULL
+);
+
  SELECT * FROM tm_usuario;

@@ -211,41 +211,58 @@ body{
   width: 100%;
   padding-top: 15px;
   display: flex;
-  flex-direction: row; /* Stack cards vertically */
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
 .card-jefe {
-  width: 30%; 
+  width: 30%;
   background-color: #ffffff;
-  border-radius: 10px; 
-  box-shadow:  7px 7px rgba(0, 0, 0, 0.1); 
-  margin: 10px; 
-  padding: 15px; 
+  border-radius: 10px;
+  box-shadow: 7px 7px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
-  text-align: center; 
+  text-align: center;
 }
 
 .img-jef {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .card-title-jef {
   font-family: 'livvic';
   color: #000000;
-  font-size: 20px; 
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px; 
+  margin-bottom: 5px;
 }
 
 .card-content-jef {
   font-family: 'livvic';
   color: #000000;
-  font-size: 18px; 
+  font-size: 18px;
   line-height: 1.5;
+}
+
+.card-content-jef span,
+.card-content-jef a {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card-content-jef a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.card-content-jef a:hover {
+  text-decoration: underline;
 }
