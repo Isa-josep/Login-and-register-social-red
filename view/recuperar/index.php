@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8">
-        <title>Recover Password | Minia - Minimal Admin & Dashboard Template</title>
+        <title>Recuperar contraseña Tec-export</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description">
         <meta content="Themesbrand" name="author">
@@ -33,8 +33,8 @@
                             <div class="w-100">
                                 <div class="d-flex flex-column h-100">
                                     <div class="mb-4 mb-md-5 text-center">
-                                        <a href="index.html" class="d-block auth-logo">
-                                            <img src="../../static/picture/logo-sm.svg" alt="" height="28"> <span class="logo-txt">Minia</span>
+                                        <a href="../../index.php"d-block auth-logo">
+                                        <img src="../../static/image/tec-exportLogo-removebg-preview.png" alt="" height="60"> <span class="logo-txt"></span>
                                         </a>
                                     </div>
                                     <div class="auth-content my-auto">
@@ -60,7 +60,7 @@
                                         </div>
                                     </div>
                                     <div class="mt-4 mt-md-5 text-center">
-                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Minia   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                                        <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Tec-export   . Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
                                     </div>
                                 </div>
                             </div>

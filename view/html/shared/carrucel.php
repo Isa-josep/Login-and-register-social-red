@@ -39,9 +39,9 @@
                                     </h4>
                                     <div class="mt-4 pt-3 pb-5">
                                         <div class="d-flex align-items-start">
-                                            <div class="flex-shrink-0">
-                                                <img src="../../static/picture/avatar-1.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                            </div>
+                                            <!-- <div class="flex-shrink-0">
+                                                <img src="../../static/image/tec-exportLogo-removebg-preview.png" class="avatar-md img-fluid rounded-circle" alt="...">
+                                            </div> -->
                                             <div class="flex-grow-1 ms-3 mb-4">
                                                 <h5 class="font-size-18 text-white">Richard Drews
                                                 </h5>
@@ -64,9 +64,9 @@
                                         and its beauty.”</h4>
                                     <div class="mt-4 pt-3 pb-5">
                                         <div class="d-flex align-items-start">
-                                            <div class="flex-shrink-0">
+                                            <!-- <div class="flex-shrink-0">
                                                 <img src="../../static/picture/avatar-2.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
-                                            </div>
+                                            </div> -->
                                             <div class="flex-grow-1 ms-3 mb-4">
                                                 <h5 class="font-size-18 text-white">Rosanna French
                                                 </h5>
@@ -89,7 +89,7 @@
                                         feel.”</h4>
                                     <div class="mt-4 pt-3 pb-5">
                                         <div class="d-flex align-items-start">
-                                            <img src="../../static/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="...">
+                                            <!-- <img src="../../static/picture/avatar-3.jpg" class="avatar-md img-fluid rounded-circle" alt="..."> -->
                                             <div class="flex-1 ms-3 mb-4">
                                                 <h5 class="font-size-18 text-white">Ilse R. Eaton</h5>
                                                 <p class="mb-0 text-white-50">Manager
