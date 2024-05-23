@@ -124,5 +124,60 @@
             $cifrado=substr(base64_decode($usu_pass),openssl_cipher_iv_length($this->cipher));
             return openssl_decrypt($cifrado,$this->cipher,$this->key,OPENSSL_RAW_DATA,$iv_dec);
         }
+        
+        public function getUsuarioById($id) {
+            $conectar = parent::conexion();
+            $sql = "SELECT * FROM tm_usuario WHERE usu_id = :id"; 
+            $stmt = $conectar->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT); 
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC); 
+        }
+
+        public function actualizarUsuario($id, $nombre, $correo, $estado, $role_id) {
+            $conectar = parent::conexion();
+            $sql = "UPDATE tm_usuario SET usu_nombre = :nombre, usu_correo = :correo, estado = :estado, role_id = :role_id WHERE usu_id = :id";
+            $stmt = $conectar->prepare($sql);
+            $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+            $stmt->bindParam(':correo', $correo, PDO::PARAM_STR);
+            $stmt->bindParam(':estado', $estado, PDO::PARAM_INT);
+            $stmt->bindParam(':role_id', $role_id, PDO::PARAM_INT); 
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+
+        public function eliminarUsuario($id) {
+            $conectar = parent::conexion();
+            $sql = "DELETE FROM tm_usuario WHERE usu_id = :id";
+        
+            $stmt = $conectar->prepare($sql);
+            $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+            return $stmt->execute();
+        }
+        
+        public function getUsuarios() {
+            $conectar = parent::conexion(); 
+            $sql = "SELECT tm_usuario.*, roles.role_name 
+                    FROM tm_usuario 
+                    JOIN roles ON tm_usuario.role_id = roles.role_id";
+            $result = $conectar->query($sql); 
+            $usuarios = [];
+            if ($result) {
+                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                    $usuarios[] = $row;
+                }
+            } else {  
+                echo "Error en la consulta: " . $conectar->errorInfo()[2];
+            }
+            return $usuarios;
+        }
+
+        public function getRoles() {
+            $conectar = parent::conexion();
+            $sql = "SELECT * FROM roles";
+            $stmt = $conectar->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 ?>
