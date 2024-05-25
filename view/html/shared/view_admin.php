@@ -10,18 +10,26 @@
 </head>
     <body>
     
-        <div class="navbar">
-            <span class="title">Tec Export.</span> 
-            <ul>
-                <li><a class="itemList" href="index.php">Inicio</a></li>
-                <li><a class="itemList" href="https://tecuruapan.edu.mx/" target="_blank">Nosotros</a></li>
-                <li><a class="itemList" href="#">Normas</a></li>
-                <li><a class="itemList" href="../../view/home/servicios.html">Servicios</a></li>
-                <li><a class="itemList" href="https://www.facebook.com/tecnmcampusuruapan"  target="_blank">Noticias</a></li>
-                <li><a class="itemList" href="#">Contacto</a></li>
-                <li><a class="itemList" href="../../view/admins/panel_control.php">Gestion de Usuarios</a></li>
-            </ul>
-        </div>
+    <div class="navbar">
+        <span class="title">Tec Export.</span>
+        <ul class="idk">
+            <li><a class="itemList" href="index.php">Inicio</a></li>
+            <li><a class="itemList" href="https://tecuruapan.edu.mx/" target="_blank">Nosotros</a></li>
+            <li><a class="itemList" href="#">Normas</a></li>
+            <li><a class="itemList" href="../../view/home/servicios.html">Servicios</a></li>
+            <li><a class="itemList" href="https://www.facebook.com/tecnmcampusuruapan" target="_blank">Noticias</a></li>
+            <li><a class="itemList" href="#">Contacto</a></li>
+            <li class="dropdown">
+                <a class="itemList" href="../../view/admins/panel_control.php">Gestion de Usuarios</a>
+                <ul class="dropdown-content">
+                    <li><a href="#opcion1">Opción 1</a></li>
+                    <li><a href="#opcion2">Opción 2</a></li>
+                    <li><a href="#opcion3">Opción 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
         <div class="container">
             <span class="sub-title">Todo Para Exportar.</span>
             <div class="sizedBox"></div>

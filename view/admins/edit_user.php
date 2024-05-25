@@ -15,8 +15,9 @@ if (isset($_GET['id'])) {
         <!DOCTYPE html>
         <html>
         <head>
-            <title>Editar Usuario</title>
-            <link rel="stylesheet" href="style.css"> </head>
+            <title>Editar Usuarios</title>
+            <link rel="stylesheet" href="style.css"> 
+        </head>    
         <body>
             <h2>Editar Usuario</h2>
 
