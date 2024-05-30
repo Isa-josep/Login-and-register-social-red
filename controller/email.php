@@ -14,8 +14,6 @@
                 $email->recovery($_POST["usu_correo"]);
                 echo "true";
             }
-            
-            
         break;
     }
 ?>

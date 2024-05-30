@@ -114,7 +114,7 @@ function register(e){
                     icon: "question",
                 });
             }
-            console.log(datos);
+            // console.log(datos);
         }
     });
 }

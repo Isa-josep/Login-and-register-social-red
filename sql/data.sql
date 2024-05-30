@@ -39,4 +39,17 @@ CREATE TABLE Jefes (
     jefe_hire_date DATE NOT NULL
 );
 
- SELECT * FROM tm_usuario;
+create table rules(
+    rule_id int primary key auto_increment,
+    rule_name varchar(255) 
+);
+
+create table files_details(
+    files_details_id int primary key auto_increment,
+    rule_id int ,
+    files_details_nom varchar(255) 
+);
+INSERT INTO tm_usuario (usu_nombre, usu_correo, usu_pass, role_id,estado) VALUES 
+('Isauro Jose ','isaurini1902@gmail.com','ztTljwMIJM/HkvW/noFjw22gwufnF6OWbbSgJl1cldQ=',3,1),
+('Mta Melica','melica.vc@uruapan.tecnm.mx','+C80o3NNrME4GfeNFCe/5r24hK6GZnreJzIj45eVeqs=',3,1),
+SELECT * FROM tm_usuario;
