@@ -6,22 +6,22 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start(); 
 }
 
-$jefe = new Jefe();
+if (isset($_SESSION["usu_id"]) && $_SESSION["role_id"] == 3) {
+    $jefe = new Jefe();
 
-if (isset($_POST['add'])) {
-    $jefe_nombre = $_POST['jefe_nombre'];
-    $jefe_role = $_POST['jefe_role'];
-    $jefe_correo = $_POST['jefe_correo'];
-    $jefe_number = $_POST['jefe_number'];
-    $jefe_extension = $_POST['jefe_extension'];
-    $jefe_location = $_POST['jefe_location'];
-    $jefe_hire_date = $_POST['jefe_hire_date'];
+    if (isset($_POST['add'])) {
+        $jefe_nombre = $_POST['jefe_nombre'];
+        $jefe_role = $_POST['jefe_role'];
+        $jefe_correo = $_POST['jefe_correo'];
+        $jefe_number = $_POST['jefe_number'];
+        $jefe_extension = $_POST['jefe_extension'];
+        $jefe_location = $_POST['jefe_location'];
+        $jefe_hire_date = $_POST['jefe_hire_date'];
 
-    $jefe->registrar_jefe($jefe_nombre, $jefe_role, $jefe_correo, $jefe_number, $jefe_extension, $jefe_location, $jefe_hire_date);
-    header("Location: panel_control.php");
-}
+        $jefe->registrar_jefe($jefe_nombre, $jefe_role, $jefe_correo, $jefe_number, $jefe_extension, $jefe_location, $jefe_hire_date);
+        header("Location: panel_control.php");
+    }
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -109,3 +109,9 @@ if (isset($_POST['add'])) {
     </div>
 </body>
 </html>
+<?php
+} else {
+    header("Location:" . Conectar::ruta() . "index.php?m=7");
+    exit();
+}
+?>
