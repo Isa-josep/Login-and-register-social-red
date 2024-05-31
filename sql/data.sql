@@ -73,5 +73,17 @@ INSERT INTO Jefes (jefe_nombre, jefe_role, jefe_correo, jefe_number, jefe_extens
 ('Juan Carlos Camarillo Pacheco', 'Jefe de Departamento', 'juan.cp@uruapan.tecnm.mx', '4525275050', NULL, 'Edificio F Planta Baja', '2015-11-30'),
 ('Ing. Julio César Cuevas Soto', 'Jefe de Departamento', 'juliocuevas@tecuruapan.edu.mx', '4525275050', NULL, 'Edificio B Planta Alta', '2014-06-25');
 
+create table rules(
+    rule_id int primary key auto_increment,
+    rule_name varchar(255) 
+);
+
+create table files_details(
+    files_details_id int primary key auto_increment,
+    rule_id int ,
+    files_details_nom varchar(255) 
+);
+
+
 --TODO: Consultar todos los registros de la tabla tm_usuario
 SELECT * FROM tm_usuario;

@@ -15,7 +15,7 @@
         <ul class="idk">
             <li><a class="itemList" href="index.php">Inicio</a></li>
             <li><a class="itemList" href="https://tecuruapan.edu.mx/" target="_blank">Nosotros</a></li>
-            <li><a class="itemList" href="#">Normas</a></li>
+            <li><a class="itemList" href="../../view/home/lista_normas.php">Normas</a></li>
             <li><a class="itemList" href="../../view/home/servicios.php">Servicios</a></li>
             <li><a class="itemList" href="https://www.facebook.com/tecnmcampusuruapan" target="_blank">Noticias</a></li>
             <li><a class="itemList" href="#">Contacto</a></li>
@@ -23,7 +23,7 @@
                 <a class="itemList" >Dashboard</a>
                 <ul class="dropdown-content">
                     <li><a href="../../view/admins/panel_control.php">Gestion de Usuarios</a></li>
-                    <li><a href="#opcion2">Subir Normas</a></li>
+                    <li><a href="../../view/admins/subir_norma.php">Subir Normas</a></li>
                     <li><a href="#opcion3">Opción 3</a></li>
                 </ul>
             </li>
