@@ -9,11 +9,11 @@ switch($_GET["op"]){
         $datos = $producto->insert_producto($rule_name);
 
         if (empty($_FILES["file"]["name"][0])) {
-            // No se han subido archivos
+            //TODO: No se han subido archivos
         } else {
             foreach ($datos as $row) {
                 $countfiles = count($_FILES["file"]["name"]);
-                // Sanitize the rule name to use it as a folder name
+                //TODO: cambiar espacio por guion bajo
                 $rule_name_sanitized = preg_replace('/[^a-zA-Z0-9_]/', '_', $rule_name);
                 $ruta = "../assets/" . $rule_name_sanitized . "/";
 
