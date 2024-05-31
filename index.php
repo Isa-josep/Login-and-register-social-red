@@ -95,6 +95,14 @@
                                                             </div>
                                                             <?php
                                                         break;
+                                                        case '8':
+                                                            ?>
+                                                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                                                <i class="mdi mdi-block-helper me-3 align-middle"></i><strong>Error</strong> - Oopppss! Primero inicia sesion para continuar
+                                                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                                            </div>
+                                                            <?php
+                                                        break;
                                                     }
                                                 }
                                             ?>
